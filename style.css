@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Hand&family=Poppins&display=swap');
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    position:sticky;
+    background-color: #000000;
+    top:0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; 
+    
+}
+.logo{
+    font-size: 25px;
+    color: aliceblue;
+    
+    font-weight: 600;
+    animation: slideTop 1s ease-in;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.navbar a{
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 37px;
+    animation: slide 2s ease-in;
+}
+.navbar ul li:hover{
+   transform:scale(1.05)
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+
+}
+.navbar ul li a {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar a.active{
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.navbar a:hover{
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+.home-content{
+    max-width: 500px;
+}
+.home-content h1{
+    font-size: 60px;
+    font-weight: 700;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    color: rgb(242, 245, 245);
+    animation: slideRight 5s ease forwards;
+}
+.home-content span{
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.home-content h3{
+    font-size:32px;
+    font-weight:500;
+    margin-top: 10px;
+    
+}
+
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgb(255, 255, 255); /* blinking cursor */
+    animation: typing 2s steps(7, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 7ch } 
+}
+
+
+@keyframes blink {
+    50% { border-color:#222 }
+}
+.home-content p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.home-icon a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin:20px 0;
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+}
+.home-icon a:nth-child(1) { 
+    animation: slideBottom 1s ease forwards; 
+}
+
+.home-icon a:nth-child(2) {
+    animation: slideRight 1s ease forwards;
+}
+
+.home-icon a:nth-child(3){
+    
+    animation: slideTop 1s ease forwards;
+   
+}
+
+.home-icon a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    border-radius: 50%;
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.home-icon a:hover::before{
+    filter: blur(10px);
+}
+
+
+.home-icon a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    transform: scale(.88);
+    z-index: -1;
+    transition: .5s ease;
+}
+.home-icon a:hover::after{
+    transform: scale(0);
+}
+.home-img{
+    width: 300px;
+    height: 300px;
+}
+
+.home-img .glowingcircle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.home-img .glowingcircle::after{
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: black;
+    border-radius: 50%;
+}
+.home-img .glowingcircle:hover{
+    transform:scale(1.05)
+}
+.glowingcircle span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(255, 8, 50),rgb(56, 220, 215));
+    border-radius:50%    
+}
+.glowingcircle span:nth-child(1){
+    filter: blur(10px);
+
+}
+.glowingcircle .image{
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    z-index: 1;
+    overflow:hidden;
+}
+.image img{
+   position: absolute;
+   left: 3%;
+   max-width: 250px;
+   object-fit: cover;
+}
+
+/* ANIMATION */
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+    }
+    
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+
+
+    /* About*/
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.about h1{
+    background: linear-gradient(45deg,rgb(255, 8, 50),rgb(56, 220, 215));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    padding: 20px;
+    margin-top: 5%;
+    animation: slideIn 5s ease forwards;
+    transform: translateX(-100px);
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.circle{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(7, 7, 7);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 5px 12px rgb(56, 220, 215,0.7) ;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    transition: 1s;
+}
+.circle img{
+    position: absolute;
+    height: 200px;
+    bottom:30%;
+    top: 10%;
+    left:20%;
+    right:25%;
+    border-radius:50%;
+}
+.circle:hover{
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.circle:hover img{
+    position:absolute;
+    top:0%;
+    bottom: 5%;
+    transition: 1s;
+}
+.circle .content{
+    opacity: 0;
+}
+.circle:hover .content{
+    position: absolute;
+    top:5%;
+    right: 0;
+    color: rgb(253, 253, 253);
+    width: 50%;
+    opacity: 1;
+    transform: 1s;
+}
+.circle .contact{
+    opacity: 0;
+}
+.contact p{
+    font-size: 10px;
+}
+@media screen and (max-width: 576px){
+    .circle{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 5px 12px rgb(0,0,0,.7);
+    margin-bottom: 10%;
+    margin-top: 3%;
+    transition: 1s;
+}
+.circle img{
+    position: absolute;
+    height: 200px;
+    bottom:25%;
+    top: 20;
+    left:10%;
+    border-radius:50%;
+}
+.circle:hover{
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    transition: 1s;
+}
+}
+
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+  background: black;
+}
+.skills h1{
+     background: linear-gradient(rgb(250, 0, 42),rgb(5, 222, 214));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+  .card-group .card {
+    max-width: 250px; /* Optional: reduce overall card size */
+    background-color: #000000;
+  }
+  .card-title{
+    color: white;
+}
+.card img{
+    padding: 20px;
+    box-shadow: 0px 5px 12px rgb(56, 220, 215,0.7) ;
+}
+  .card{
+    padding: 40px;
+    border-radius: 40px;
+    background-color: transparent;
+    box-shadow: 0px 5px 12px rgb(56, 220, 215,0.7) ;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    transition: 5s;
+}
+  .card-img-top.small-img {
+    height: 120px;  /* Adjust height as needed */
+    object-fit: cover; /* Crop image to fit nicely */
+  }
+.project h1{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    background: linear-gradient(rgb(250, 0, 42),rgb(5, 222, 214));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.project-list a{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#carouselExampleCaptions {
+  width: 500px;      
+  height: 500px;     /* smaller height */
+  margin: 20px auto; /* center with some spacing */
+  overflow: hidden;  /* hide overflow */
+}
+
+.carousel-inner img {
+    box-shadow: 0px 5px 12px rgb(56, 220, 215,0.7) ;
+
+}
+
+#carouselExampleCaptions .carousel-inner img {
+  width: 100%;       /* make images fit carousel width */
+  height: 400px;     /* fixed height to match carousel */
+  object-fit: cover; /* crop images nicely */
+  
+}
+.carousel-inner h5,p{
+    color: rgb(241, 240, 240);
+}
+footer {
+  background-color: #222;         /* Dark background */
+  color: #eee;                    /* Light text */
+  padding: 10px 5px;             /* Some spacing */
+  text-align: center;             /* Center the content */
+  font-family: Arial, sans-serif; /* Clean font */
+  
+}
+
+footer {
+  background-color: #000000;         
+  color: #eee;                  
+  padding:10px;             
+  text-align: center;             
+  font-family: Arial, sans-serif;
+  border-top: 2px solid #8e8c8a; /* Accent border on top */
+}
+
+footer h1{
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+   background: linear-gradient(rgb(250, 0, 42),rgb(5, 222, 214));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+footer p {
+  margin: 5px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.contact .left p{
+    font-size: 15px;
+}
+.contact .right p{
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+
+}
